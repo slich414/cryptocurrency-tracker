@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Szymon Lichota">
+    <title>Settings</title>
+    <link th:href="@{/styles/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+<nav>
+    <ul class="navbar-ul">
+        <li><a href="/">Home</a></li>
+        <li><a href="/info">Show current informations</a></li>
+
+        <div class="dropdown">
+            <button class="dropbtn">Portfolio
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/portfolio/add">New completed purchase</a>
+                <a href="/portfolio/purchase/add">New purchase</a>
+                <a href="/portfolio/sale/add">New sale</a>
+                <a href="/portfolio/history">Portfolio history</a>
+                <a href="/portfolio/manage">Current value</a>
+            </div>
+        </div>
+        <li class="active" style="float:right"><a href="/settings">Settings</a></li>
+
+    </ul>
+</nav>
+
+<section id="settings_section">
+    <!--        <p>Wybierz walutę:</p>-->
+    <form action="/settings/currency" style="width: 100%">
+        <label for="currency">Choose a currency:</label>
+        <select name="currency" id="currency" style="width: 100%; margin-top: 10px">
+            <option value="pln">Polish zloty</option>
+            <option value="usd">United States dollar</option>
+            <option value="eur">Euro</option>
+        </select>
+        <br><br>
+        <input type="submit" id="submit" value="Save" style="width: 100%">
+    </form>
+</section>
+
+</body>
+</html>

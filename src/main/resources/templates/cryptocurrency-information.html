@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Szymon Lichota">
+    <title>Cryptocurrency information</title>
+    <link th:href="@{/styles/css/styles.css}" rel="stylesheet" />
+
+</head>
+<body>
+
+
+
+<nav>
+    <ul class="navbar-ul">
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/info">Show current informations</a></li>
+
+        <div class="dropdown">
+            <button class="dropbtn">Portfolio
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/portfolio/add">New completed purchase</a>
+                <a href="/portfolio/purchase/add">New purchase</a>
+                <a href="/portfolio/sale/add">New sale</a>
+                <a href="/portfolio/history">Portfolio history</a>
+                <a href="/portfolio/manage">Current value</a>
+            </div>
+        </div>
+        <li style="float:right"><a href="/settings">Settings</a></li>
+
+    </ul>
+</nav>
+
+<section>
+
+    </br>
+    <table class="content-table">
+        <thead>
+            <th>name</th>
+            <th>price</th>
+            <th>currency</th>
+            <th>market cap</th>
+            <th>total volume</th>
+        </thead>
+        <tbody>
+            <th style="text-align: left"><p th:text="${crypto.name}"></p></th>
+            <th style="text-align: left"><p th:text="${crypto.price}"></p></th>
+            <th style="text-align: left"><p th:text="${crypto.currency}"></p></th>
+            <th style="text-align: left"><p th:text="${crypto.marketCap}"></p></th>
+            <th style="text-align: left"><p th:text="${crypto.totalVolume}"></p></th>
+
+        </tbody>
+    </table>
+    <div class="container">
+        <h2 align="center">Technology Line Graph</h2>
+
+        <div id="container"
+             style="width: 600px; height: 400px; margin: 0 auto; border-radius: 5px 5px 0 0;"></div>
+    </div>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script th:inline="javascript">
+        $(function(){
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Monthly [[${crypto.name}]] price'
+                },
+                subtitle: {
+                    text: 'Source: coingecko.com'
+                },
+                xAxis: {
+                    categories: [[${dateMap.keySet()}]]
+                },
+                yAxis: {
+                    title: {
+                        text: 'Price'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: false
+                        },
+                        enableMouseTracking: true
+                    }
+                },
+                series: [{
+                    name: [[${crypto.name}]],
+                    data: [[${dateMap.values()}]]
+                }
+                ]
+            });
+        });
+    </script>
+</section>
+
+</body>
+</html>

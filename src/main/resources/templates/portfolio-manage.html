@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Szymon Lichota">
+    <title>Manage portfolio</title>
+    <link th:href="@{/styles/css/styles.css}" rel="stylesheet" />
+    <style>
+
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul class="navbar-ul">
+        <li><a href="/">Home</a></li>
+        <li><a href="/info">Show current informations</a></li>
+
+        <div class="dropdown active">
+            <button class="dropbtn">Portfolio
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/portfolio/add">New completed purchase</a>
+                <a href="/portfolio/purchase/add">New purchase</a>
+                <a href="/portfolio/sale/add">New sale</a>
+                <a href="/portfolio/history">Portfolio history</a>
+                <a href="/portfolio/manage">Current value</a>
+            </div>
+        </div>
+        <li style="float:right"><a href="/settings">Settings</a></li>
+    </ul>
+</nav>
+
+<section>
+    <table class="content-table">
+        <thead>
+        <th></th>
+        <th>name</th>
+        <th>Amount</th>
+        <th>Actual total value</th>
+        </thead>
+        <tbody>
+        <tr th:each="crypto : ${actualPortfolio}">
+            <td><img th:src="${crypto.cryptocurrency.url}" alt="logo" style="width: 25px; height: 25px"></td>
+            <td th:text="${crypto.cryptocurrency.name}"/>
+            <td th:text="${crypto.amount}"/>
+            <td th:text="${crypto.value}"/>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<div class="container">
+    <h2 align="center">Percentage by portfolio actual value</h2>
+
+    <div id="container"
+         style="width: 600px; height: 400px; margin: 0 auto; border-radius: 5px 5px 0 0;"></div>
+</div>
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script th:inline="javascript">
+    $(function(){
+        Highcharts.chart('container', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Portfolio'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: 'Percentage actual value',
+                colorByPoint: true,
+                data: [{
+                    name: [[${actualPortfolio.get(0).getCryptocurrency().getName()}]],
+                    y: [[${actualPortfolio.get(0).getValue()}]],
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: [[${actualPortfolio.get(1).getCryptocurrency().getName()}]],
+                    y: [[${actualPortfolio.get(1).getValue()}]]
+                }, {
+                    name: [[${actualPortfolio.get(2).getCryptocurrency().getName()}]],
+                    y: [[${actualPortfolio.get(2).getValue()}]]
+                }, {
+                    name: [[${actualPortfolio.get(3).getCryptocurrency().getName()}]],
+                    y: [[${actualPortfolio.get(3).getValue()}]]
+                }, {
+                    name: [[${actualPortfolio.get(4).getCryptocurrency().getName()}]],
+                    y: [[${actualPortfolio.get(4).getValue()}]]
+                },{
+                    name: [[${actualPortfolio.get(5).getCryptocurrency().getName()}]],
+                    y: [[${actualPortfolio.get(5).getValue()}]]
+                }, {
+                        name: [[${actualPortfolio.get(6).getCryptocurrency().getName()}]],
+                        y: [[${actualPortfolio.get(6).getValue()}]]
+                }
+                ]
+            }]
+        });
+    });
+</script>
+</body>
+</html>

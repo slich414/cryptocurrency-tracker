@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+    <ul class="navbar-ul">
+        <li><a href="/">Home</a></li>
+        <li><a href="/info">Show current informations</a></li>
+
+        <div class="dropdown active">
+            <button class="dropbtn">Portfolio
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/portfolio/add">New completed purchase</a>
+                <a href="/portfolio/purchase/add">New purchase</a>
+                <a href="/portfolio/sale/add">New sale</a>
+                <a href="/portfolio/history">Portfolio history</a>
+                <a href="/portfolio/manage">Current value</a>
+            </div>
+        </div>
+        <li style="float:right"><a href="/settings">Settings</a></li>
+    </ul>
+</nav>
+
+<div class="portfolio_save_div" align="center">
+    <h3>Edit full purchase transaction</h3>
+
+    <form method="post" th:object="${userPurchaseToEdit}" th:action="@{/portfolio/edit/{id}(id=${userPurchaseToEdit.id})}">
+
+        <div class="portfolio_save_div_row">
+            <label>Cryptocurrency: </label>
+            <select th:field="*{Cryptocurrency}" class="form-control">
+                <option th:each="cryptocurrency: ${cryptocurrencies}" th:value="${cryptocurrency.id}" th:text="${cryptocurrency.name}"></option>
+            </select><br>
+        </div>
+
+        <div class="portfolio_save_div_row">
+            <label for="currency">Currency: </label>
+            <input id="currency" placeholder="Enter currency" th:field="*{currency}"/><br>
+        </div>
+
+        <div class="portfolio_save_div_row">
+            <label for="amount">Bought amount: </label>
+            <input id="amount" placeholder="Enter amount" th:field="*{amount}"/><br>
+        </div>
+
+        <div class="portfolio_save_div_row">
+            <label for="purchase_price">Purchase price: </label>
+            <input id="purchase_price" placeholder="Enter amount" th:field="*{transactionPrice}"/><br>
+        </div>
+
+        <div class="portfolio_save_div_row">
+            <label for="bought_date">Bought date: </label>
+            <input id="bought_date" placeholder="Enter date" required type="date" th:field="*{transactionTime}"/><br>
+        </div>
+
+        <div class="portfolio_save_div_row">
+            <label for="sold_price">Sold price: </label>
+            <input id="sold_price" placeholder="Enter amount" th:field="*{soldPrice}"/><br>
+        </div>
+
+        <div class="portfolio_save_div_row">
+            <label for="sold_date">Sold date: </label>
+            <input id="sold_date" placeholder="Enter date" required type="date" th:field="*{soldTime}"  value="2018-06-12"/><br>
+        </div>
+
+        <div class="portfolio_save_div_description">
+            <label for="description">Description: </label>
+            <textarea  style="resize: none" id="description" placeholder="Enter description" cols="30" rows="5" required type="text" th:field="*{description}"/></textarea><br>
+        </div>
+
+
+        <input class="portfolio_save_div_submit" type="submit" value="Submit">
+        <div th:if="${#fields.hasErrors('*')}">
+            <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+        </div>
+    </form>
+</div>
+</body>
+</html>

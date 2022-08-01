@@ -1,0 +1,236 @@
+/* The dropdown container */
+body{
+    background-color: #E1E5EE;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.navbar-ul{
+    font-size: 16px;
+    font-family: arial, sans-serif;
+    border-radius: 5px 5px 0 0;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+
+    font-family: arial, sans-serif;
+    margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* przy przytrzymaniu nad napisem*/
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #767B91;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2A324B;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #767B91;
+}
+
+.active {
+    background-color: #767B91;
+}
+
+
+article{
+    border-style: solid;
+    width: 300px;
+    margin-bottom: 10px;
+    margin: 10px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.15);
+    border-width: thick;
+}
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+#settings_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    margin: auto;
+}
+article p{
+    text-align: center;
+    font-size: 22px;
+
+}
+img{
+    height: 250px;
+    width: 300px;
+}
+#save_crypto_item{
+    width: 100%;
+}
+
+
+.content-table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width:400px;
+    width: 80%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 2px rgba(0,0,0,0.15);
+}
+.content-table thead tr{
+    background-color: #2A324B;
+    color: #ffff;
+    text-align: left;
+    font-weight: bold;
+}
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+}
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #2A324B;
+}
+
+/* add/edit pages*/
+.portfolio_save_div{
+    font-size: 19px;
+    color:black;
+    min-height:900px;
+    text-align: center;
+    width: 600px;
+    margin:0 auto;
+}
+
+.portfolio_save_div form{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: 15px;
+}
+
+.portfolio_save_div_row{
+    font-size: 19px;
+    margin: 25px 0px;
+    position: relative;
+}
+
+.portfolio_save_div_description{
+    font-size: 19px;
+    margin: 25px 0px;
+    position: relative;
+    height: 100px;
+}
+
+.portfolio_save_div_description textarea{
+    position: relative;
+    float:right;
+    width: 380px;
+    font-size: 19px;
+}
+
+.portfolio_save_div_row input{
+    position: relative;
+    float:right;
+    width: 380px;
+    font-size: 19px;
+}
+
+.portfolio_save_div_row label{
+    position: relative;
+    float:left;
+    width: 200px;
+    font-size: 19px;
+}
+
+.portfolio_save_div_row select{
+    position: relative;
+    float:right;
+    width: 388px;
+    font-size: 19px;
+}
+
+.portfolio_save_div_submit{
+    font-size: 19px;
+    margin: 20px;
+    padding: 15px 25px;
+    position: relative;
+    color: white;
+    background-color: #2A324B;
+    border: 2px white solid;
+    opacity: 0.9;
+    cursor: pointer;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.portfolio_save_div_submit:hover{
+    background-color: #767B91;
+}

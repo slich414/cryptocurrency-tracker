@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Szymon Lichota">
+    <title>Cryptocurrency list</title>
+    <link th:href="@{/styles/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+
+<nav>
+    <ul class="navbar-ul">
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/info">Show current informations</a></li>
+
+        <div class="dropdown">
+            <button class="dropbtn">Portfolio
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/portfolio/add">New completed purchase</a>
+                <a href="/portfolio/purchase/add">New purchase</a>
+                <a href="/portfolio/sale/add">New sale</a>
+                <a href="/portfolio/history">Portfolio history</a>
+                <a href="/portfolio/manage">Current value</a>
+            </div>
+        </div>
+        <li style="float:right"><a href="/settings">Settings</a></li>
+
+    </ul>
+</nav>
+
+<section>
+    <article th:each="cryptocurrency : ${cryptocurrencies}">
+        <img th:src="${cryptocurrency.url}" alt="Cryptocurrency logo">
+        <p th:text="${cryptocurrency.name}"></p>
+        <p><a th:href="'/info/' + ${cryptocurrency.name.toLowerCase()}">Show more</a></p>
+    </article>
+</section>
+
+</body>
+</html>

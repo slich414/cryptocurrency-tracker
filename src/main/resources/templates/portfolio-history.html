@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Szymon Lichota">
+  <title>Portfolio history</title>
+  <link th:href="@{/styles/css/styles.css}" rel="stylesheet" />
+  <style>
+    .image-txt-container {
+      display:flex;
+      align-items:center;
+      flex-direction: row;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <ul class="navbar-ul">
+    <li><a href="/">Home</a></li>
+    <li><a href="/info">Show current informations</a></li>
+
+    <div class="dropdown active">
+      <button class="dropbtn">Portfolio
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/portfolio/add">New completed purchase</a>
+        <a href="/portfolio/purchase/add">New purchase</a>
+        <a href="/portfolio/sale/add">New sale</a>
+        <a href="/portfolio/history">Portfolio history</a>
+        <a href="/portfolio/manage">Current value</a>
+      </div>
+    </div>
+    <li style="float:right"><a href="/settings">Settings</a></li>
+  </ul>
+</nav>
+
+<div style="text-align: center;"><h2>Completed transactions:</h2></div>
+<section>
+  <table class="content-table">
+    <thead>
+    <th></th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Purchase price</th>
+    <th>Bought date</th>
+    <th>Sold date</th>
+    <th>Sold price</th>
+    <th>Profit</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </thead>
+    <tbody>
+    <tr th:each="crypto : ${userCryptocurrencies}">
+      <td><img th:src="${crypto.cryptocurrency.url}" alt="Cryptocurrency logo" style="width: 25px; height: 25px"></td>
+      <td th:text="${crypto.cryptocurrency.name}"></td>
+      <td th:text="${crypto.description}"></td>
+      <td th:text="${crypto.amount}"></td>
+      <td th:text="${crypto.currency}"></td>
+      <td th:text="${crypto.transactionPrice}"> <p th:text="${crypto.currency}"></p></td>
+      <td th:text="${#dates.format(crypto.transactionTime, 'dd-MMM-yyyy')}"></td>
+      <td th:text="${crypto.soldPrice}"></td>
+      <td th:text="${#dates.format(crypto.soldTime, 'dd-MMM-yyyy')}"></td>
+
+      <td th:if="${crypto.profit &lt; 0}"> <div class="image-txt-container"><img th:src="@{/arrow/arrow-down.png}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"><p th:text="${crypto.profit}"></p>%</div></td>
+      <td th:if="${crypto.profit &gt; 0}"> <div class="image-txt-container"><img th:src="@{/arrow/arrow-up.jpg}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"> <p th:text="${crypto.profit}"></p>%</div> </td>
+      <td th:if="${crypto.profit eq 0}"> <div class="image-txt-container"><img th:src="@{/arrow/arrow.png}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"> <p th:text="${crypto.profit}"></p>%</div> </td>
+
+      <!--      <td th:switch="${crypto.profit}">-->
+<!--        <div th:case="${crypto.profit} lt 0"><div class="image-txt-container"><img th:src="@{/arrow/arrow-down.png}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"><p th:text="${crypto.profit}"></p>%</div></div>-->
+<!--        <div th:case="${crypto.profit} gt 0"><div class="image-txt-container"><img th:src="@{/arrow/arrow-up.jpg}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"> <p th:text="${crypto.profit}"></p>%</div></div>-->
+
+<!--      </td>-->
+
+      <td><a th:href="@{/portfolio/edit/{id}(id=${crypto.id})}">Edit</a></td>
+      <td><a th:href="@{/portfolio/delete/{id}(id=${crypto.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</section>
+
+
+<div style="text-align: center;"><h2>Purchase and sale transactions:</h2></div>
+<section>
+
+  <table class="content-table">
+    <thead>
+    <th></th>
+    <th>Transaction's type</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Amount</th>
+    <th>Currency</th>
+    <th>Transaction time</th>
+    <th>Transaction price</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </thead>
+    <tbody>
+    <tr th:each="crypto : ${unfinishedTransactions}">
+      <td><img th:src="${crypto.cryptocurrency.url}" alt="Cryptocurrency logo" style="width: 25px; height: 25px"></td>
+      <td th:text="${crypto.type}"/>
+      <td th:text="${crypto.cryptocurrency.name}"/>
+      <td th:text="${crypto.description}"/>
+      <td th:text="${crypto.amount}"/>
+      <td th:text="${crypto.currency}"/>
+      <td th:text="${#dates.format(crypto.transactionTime, 'dd-MMM-yyyy')}"></td>
+      <td th:text="${crypto.transactionPrice}"/>
+      <td th:if="${crypto.type} eq 'sale'"><a th:href="@{/portfolio/sale/edit/{id}(id=${crypto.id})}">Edit</a></td>
+      <td th:if="${crypto.type} eq 'purchase'"><a th:href="@{/portfolio/purchase/edit/{id}(id=${crypto.id})}">Edit</a></td>
+      <td th:if="${crypto.type} eq 'sale'"><a th:href="@{/portfolio/sale/delete/{id}(id=${crypto.id})}">Delete</a></td>
+      <td th:if="${crypto.type} eq 'purchase'"><a th:href="@{/portfolio/purchase/delete/{id}(id=${crypto.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+</body>
+</html>
