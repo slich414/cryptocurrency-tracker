@@ -17,7 +17,6 @@ public class PracaLicencjackaApplication {
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(PracaLicencjackaApplication.class, args);
 
-
 	}
 
 	@Bean

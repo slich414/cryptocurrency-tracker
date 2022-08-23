@@ -68,11 +68,6 @@
       <td th:if="${crypto.profit &gt; 0}"> <div class="image-txt-container"><img th:src="@{/arrow/arrow-up.jpg}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"> <p th:text="${crypto.profit}"></p>%</div> </td>
       <td th:if="${crypto.profit eq 0}"> <div class="image-txt-container"><img th:src="@{/arrow/arrow.png}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"> <p th:text="${crypto.profit}"></p>%</div> </td>
 
-      <!--      <td th:switch="${crypto.profit}">-->
-<!--        <div th:case="${crypto.profit} lt 0"><div class="image-txt-container"><img th:src="@{/arrow/arrow-down.png}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"><p th:text="${crypto.profit}"></p>%</div></div>-->
-<!--        <div th:case="${crypto.profit} gt 0"><div class="image-txt-container"><img th:src="@{/arrow/arrow-up.jpg}" alt="arrow up" style="width: 25px; height: 25px; margin-right: 2px"> <p th:text="${crypto.profit}"></p>%</div></div>-->
-
-<!--      </td>-->
 
       <td><a th:href="@{/portfolio/edit/{id}(id=${crypto.id})}">Edit</a></td>
       <td><a th:href="@{/portfolio/delete/{id}(id=${crypto.id})}">Delete</a></td>

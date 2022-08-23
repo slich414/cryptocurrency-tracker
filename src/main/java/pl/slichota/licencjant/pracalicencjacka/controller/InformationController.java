@@ -31,8 +31,6 @@ public class InformationController {
         return "cryptocurrency-list";
     }
 
-
-
     @GetMapping("{name}")
     public String getInformation(@PathVariable("name") String name, Model model) throws IOException {
         model.addAttribute("dateMap", informationService.getLast12MonthsPrices(name));
