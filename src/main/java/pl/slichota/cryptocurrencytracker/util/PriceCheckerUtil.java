@@ -35,23 +35,19 @@ public class PriceCheckerUtil {
 
     }
 
-    public static BigDecimal getPrice(JSONObject jsonObject, String currency){
+    public static BigDecimal getPrice(String name, String date, String currency) throws IOException {
+        JSONObject jsonObject = PriceCheckerUtil.getJSONFromSelectedDate(name, date);
         return ((BigDecimal) jsonObject.getJSONObject("market_data").getJSONObject("current_price").get(currency)).setScale(2, RoundingMode.HALF_UP);
     }
 
-    public static BigDecimal getMarketCap(JSONObject jsonObject, String currency){
+    public static BigDecimal getMarketCap(String name, String date, String currency) throws IOException {
+        JSONObject jsonObject = PriceCheckerUtil.getJSONFromSelectedDate(name, date);
         return ((BigDecimal) jsonObject.getJSONObject("market_data").getJSONObject("market_cap").get(currency)).setScale(2, RoundingMode.HALF_UP);
     }
 
-    public static BigDecimal getTotalVolume(JSONObject jsonObject, String currency){
+    public static BigDecimal getTotalVolume(String name, String date, String currency) throws IOException {
+        JSONObject jsonObject = PriceCheckerUtil.getJSONFromSelectedDate(name, date);
         return ((BigDecimal) jsonObject.getJSONObject("market_data").getJSONObject("total_volume").get(currency)).setScale(2, RoundingMode.HALF_UP);
     }
-
-
-
-
-
-
-
 
 }

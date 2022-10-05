@@ -13,9 +13,7 @@ public class SettingsService {
     public SettingsService(SettingsRepository settingsRepository){
         this.settingsRepository = settingsRepository;
     }
-    public String checkIfCurrencyIsInRepository(){
-        return settingsRepository.findByName("currency");
-    }
+
     public Settings addCurrency(String currency){
         return settingsRepository.save(new Settings("currency", currency));
     }

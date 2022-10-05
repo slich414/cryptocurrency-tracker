@@ -33,8 +33,7 @@ public class InformationService {
         for(int i = 12; i>=0; i--){
             LocalDateTime localDateTime = LocalDateTime.now().minusMonths(i);
             String date = dateTimeFormatter.format(localDateTime);
-            JSONObject jsonObject = PriceCheckerUtil.getJSONFromSelectedDate(name, date);
-            BigDecimal price = PriceCheckerUtil.getPrice(jsonObject, currency).setScale(2, RoundingMode.HALF_UP);
+            BigDecimal price = PriceCheckerUtil.getPrice(name, date, currency).setScale(2, RoundingMode.HALF_UP);
             dateMap.put(dateTimeFormatter.format(localDateTime), price);
         }
         return dateMap;
@@ -45,11 +44,11 @@ public class InformationService {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDateTime localDateTime = LocalDateTime.now();
         String date = dateTimeFormatter.format(localDateTime);
-        // get current price
-        JSONObject jsonObject = PriceCheckerUtil.getJSONFromSelectedDate(name, date);
-        BigDecimal price = PriceCheckerUtil.getPrice(jsonObject, currency);
-        BigDecimal totalValue = PriceCheckerUtil.getTotalVolume(jsonObject, currency);
-        BigDecimal marketCap = PriceCheckerUtil.getMarketCap(jsonObject, currency);
+
+        // get current price, total value and market cap
+        BigDecimal price = PriceCheckerUtil.getPrice(name, date, currency);
+        BigDecimal totalValue = PriceCheckerUtil.getTotalVolume(name, date, currency);
+        BigDecimal marketCap = PriceCheckerUtil.getMarketCap(name, date, currency);
         return new Cryptocurrency(name, price, currency, marketCap, totalValue);
     }
 }

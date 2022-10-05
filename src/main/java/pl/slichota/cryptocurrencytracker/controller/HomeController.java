@@ -22,7 +22,6 @@ public class HomeController {
 
     @GetMapping
     public String getIndex(){
-
         return "index";
     }
 
@@ -32,7 +31,7 @@ public class HomeController {
     }
 
     @GetMapping("/settings/currency")
-    public String getChosenSetting(@RequestParam("currency") String currency){
+    public String changeCurrency(@RequestParam("currency") String currency){
 
         Settings currencyVar = settingsService.getCurrency();
         if(currencyVar == null){

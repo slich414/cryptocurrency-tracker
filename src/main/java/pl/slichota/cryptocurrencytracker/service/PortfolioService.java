@@ -88,9 +88,7 @@ public class PortfolioService {
         }
         
         for (UserPortfolioBalanceDTO userPortfolioBalanceDTO : userPortfolioBalanceDTOS){
-            JSONObject jsonObject = PriceCheckerUtil.getJSONFromSelectedDate(userPortfolioBalanceDTO.getCryptocurrency().getName().toLowerCase(), date);
-            BigDecimal price = PriceCheckerUtil.getPrice(jsonObject, settingsService.getCurrency().getValue());
-
+            BigDecimal price = PriceCheckerUtil.getPrice(userPortfolioBalanceDTO.getCryptocurrency().getName().toLowerCase(), date, settingsService.getCurrency().getValue());
             BigDecimal value = price.multiply(BigDecimal.valueOf(userPortfolioBalanceDTO.getAmount()));
             BigDecimal result = userPortfolioBalanceDTO.getValue().add(value);
             userPortfolioBalanceDTO.setValue(BigDecimal.valueOf(result.doubleValue()));
