@@ -1,11 +1,11 @@
-package pl.slichota.licencjant.pracalicencjacka.controller;
+package pl.slichota.cryptocurrencytracker.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import pl.slichota.licencjant.pracalicencjacka.service.PortfolioService;
-import pl.slichota.licencjant.pracalicencjacka.service.UserCompletedPurchaseService;
+import pl.slichota.cryptocurrencytracker.service.PortfolioService;
+import pl.slichota.cryptocurrencytracker.service.UserCompletedPurchaseService;
 
 import java.io.IOException;
 

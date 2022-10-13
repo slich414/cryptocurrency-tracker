@@ -1,4 +1,4 @@
-package pl.slichota.licencjant.pracalicencjacka.controller;
+package pl.slichota.cryptocurrencytracker.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserPurchase;
-import pl.slichota.licencjant.pracalicencjacka.service.CryptocurrencyService;
-import pl.slichota.licencjant.pracalicencjacka.service.PortfolioService;
-import pl.slichota.licencjant.pracalicencjacka.service.UserCompletedPurchaseService;
-import pl.slichota.licencjant.pracalicencjacka.service.UserPurchaseService;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserPurchase;
+import pl.slichota.cryptocurrencytracker.service.CryptocurrencyService;
+import pl.slichota.cryptocurrencytracker.service.PortfolioService;
+import pl.slichota.cryptocurrencytracker.service.UserCompletedPurchaseService;
+import pl.slichota.cryptocurrencytracker.service.UserPurchaseService;
 
 import javax.validation.Valid;
 import java.io.IOException;

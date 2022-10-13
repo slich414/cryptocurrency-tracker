@@ -8,14 +8,14 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.slichota.licencjant.pracalicencjacka.domain.Cryptocurrency;
-import pl.slichota.licencjant.pracalicencjacka.domain.Settings;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserPurchase;
-import pl.slichota.licencjant.pracalicencjacka.exceptions.UserPurchaseNotFoundException;
-import pl.slichota.licencjant.pracalicencjacka.repository.UserPurchaseRepository;
-import pl.slichota.licencjant.pracalicencjacka.repository.UserSaleRepository;
-import pl.slichota.licencjant.pracalicencjacka.service.SettingsService;
-import pl.slichota.licencjant.pracalicencjacka.service.UserPurchaseService;
+import pl.slichota.cryptocurrencytracker.domain.Cryptocurrency;
+import pl.slichota.cryptocurrencytracker.domain.Settings;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserPurchase;
+import pl.slichota.cryptocurrencytracker.exceptions.UserPurchaseNotFoundException;
+import pl.slichota.cryptocurrencytracker.repository.UserPurchaseRepository;
+import pl.slichota.cryptocurrencytracker.service.SettingsService;
+import pl.slichota.cryptocurrencytracker.service.UserPurchaseService;
+
 
 import java.math.BigDecimal;
 import java.util.Calendar;

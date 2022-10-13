@@ -1,9 +1,9 @@
-package pl.slichota.licencjant.pracalicencjacka.service;
+package pl.slichota.cryptocurrencytracker.service;
 
-import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-import pl.slichota.licencjant.pracalicencjacka.domain.Cryptocurrency;
-import pl.slichota.licencjant.pracalicencjacka.util.PriceCheckerUtil;
+import pl.slichota.cryptocurrencytracker.domain.Cryptocurrency;
+import pl.slichota.cryptocurrencytracker.util.PriceCheckerUtil;
+
 
 import java.io.IOException;
 import java.math.BigDecimal;

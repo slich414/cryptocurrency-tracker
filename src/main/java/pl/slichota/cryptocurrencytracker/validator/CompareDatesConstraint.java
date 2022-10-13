@@ -1,7 +1,4 @@
-package pl.slichota.licencjant.pracalicencjacka.validator;
-
-import javax.validation.Constraint;
-import java.lang.annotation.*;
+package pl.slichota.cryptocurrencytracker.validator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

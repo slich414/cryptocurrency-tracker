@@ -1,10 +1,10 @@
-package pl.slichota.licencjant.pracalicencjacka.service;
+package pl.slichota.cryptocurrencytracker.service;
 
 import org.springframework.stereotype.Service;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserCompletedPurchase;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserPurchase;
-import pl.slichota.licencjant.pracalicencjacka.exceptions.UserPurchaseNotFoundException;
-import pl.slichota.licencjant.pracalicencjacka.repository.UserPurchaseRepository;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserPurchase;
+import pl.slichota.cryptocurrencytracker.exceptions.UserPurchaseNotFoundException;
+import pl.slichota.cryptocurrencytracker.repository.UserPurchaseRepository;
+
 
 import java.util.List;
 import java.util.Optional;

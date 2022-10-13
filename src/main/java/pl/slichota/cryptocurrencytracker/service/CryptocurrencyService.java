@@ -1,10 +1,10 @@
-package pl.slichota.licencjant.pracalicencjacka.service;
+package pl.slichota.cryptocurrencytracker.service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.slichota.licencjant.pracalicencjacka.domain.Cryptocurrency;
-import pl.slichota.licencjant.pracalicencjacka.repository.CryptocurrencyRepository;
+import pl.slichota.cryptocurrencytracker.domain.Cryptocurrency;
+import pl.slichota.cryptocurrencytracker.repository.CryptocurrencyRepository;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package pl.slichota.licencjant.pracalicencjacka.controller;
+package pl.slichota.cryptocurrencytracker.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.slichota.licencjant.pracalicencjacka.service.CryptocurrencyService;
-import pl.slichota.licencjant.pracalicencjacka.service.InformationService;
+import pl.slichota.cryptocurrencytracker.service.CryptocurrencyService;
+import pl.slichota.cryptocurrencytracker.service.InformationService;
 
 import java.io.IOException;
 

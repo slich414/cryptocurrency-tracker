@@ -1,9 +1,10 @@
-package pl.slichota.licencjant.pracalicencjacka.service;
+package pl.slichota.cryptocurrencytracker.service;
 
 
 import org.springframework.stereotype.Service;
-import pl.slichota.licencjant.pracalicencjacka.domain.Settings;
-import pl.slichota.licencjant.pracalicencjacka.repository.SettingsRepository;
+import pl.slichota.cryptocurrencytracker.domain.Settings;
+import pl.slichota.cryptocurrencytracker.repository.SettingsRepository;
+
 
 @Service
 public class SettingsService {

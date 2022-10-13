@@ -1,23 +1,23 @@
-package pl.slichota.licencjant.pracalicencjacka.service;
+package pl.slichota.cryptocurrencytracker.service;
 
 
-import org.json.JSONObject;
 import org.springframework.stereotype.Service;
-import pl.slichota.licencjant.pracalicencjacka.domain.Cryptocurrency;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserPurchase;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserSale;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserTransaction;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.dto.UserPortfolioBalanceDTO;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.dto.UserTransactionDTO;
-import pl.slichota.licencjant.pracalicencjacka.util.PriceCheckerUtil;
+import pl.slichota.cryptocurrencytracker.domain.Cryptocurrency;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserPurchase;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserSale;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserTransaction;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.dto.UserPortfolioBalanceDTO;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.dto.UserTransactionDTO;
+import pl.slichota.cryptocurrencytracker.util.PriceCheckerUtil;
+
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @Service
 public class PortfolioService {

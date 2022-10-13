@@ -1,4 +1,4 @@
-package pl.slichota.licencjant.pracalicencjacka.exceptions;
+package pl.slichota.cryptocurrencytracker.exceptions;
 
 
 import org.springframework.http.HttpStatus;

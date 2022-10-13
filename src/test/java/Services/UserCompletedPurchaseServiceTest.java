@@ -9,15 +9,14 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.slichota.licencjant.pracalicencjacka.domain.Cryptocurrency;
-import pl.slichota.licencjant.pracalicencjacka.domain.Settings;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserCompletedPurchase;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserSale;
-import pl.slichota.licencjant.pracalicencjacka.exceptions.UserCompletedPurchaseNotFoundException;
-import pl.slichota.licencjant.pracalicencjacka.exceptions.UserPurchaseNotFoundException;
-import pl.slichota.licencjant.pracalicencjacka.repository.UserCompletedPurchaseRepository;
-import pl.slichota.licencjant.pracalicencjacka.service.SettingsService;
-import pl.slichota.licencjant.pracalicencjacka.service.UserCompletedPurchaseService;
+import pl.slichota.cryptocurrencytracker.domain.Cryptocurrency;
+import pl.slichota.cryptocurrencytracker.domain.Settings;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserCompletedPurchase;
+import pl.slichota.cryptocurrencytracker.exceptions.UserCompletedPurchaseNotFoundException;
+import pl.slichota.cryptocurrencytracker.repository.UserCompletedPurchaseRepository;
+import pl.slichota.cryptocurrencytracker.service.SettingsService;
+import pl.slichota.cryptocurrencytracker.service.UserCompletedPurchaseService;
+
 
 import java.io.IOException;
 import java.math.BigDecimal;

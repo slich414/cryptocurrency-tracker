@@ -1,12 +1,11 @@
-package pl.slichota.licencjant.pracalicencjacka.service;
+package pl.slichota.cryptocurrencytracker.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserPurchase;
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserSale;
-import pl.slichota.licencjant.pracalicencjacka.exceptions.UserPurchaseNotFoundException;
-import pl.slichota.licencjant.pracalicencjacka.exceptions.UserSaleNotFoundException;
-import pl.slichota.licencjant.pracalicencjacka.repository.UserSaleRepository;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserSale;
+import pl.slichota.cryptocurrencytracker.exceptions.UserSaleNotFoundException;
+import pl.slichota.cryptocurrencytracker.repository.UserSaleRepository;
+
 
 import java.util.List;
 import java.util.Optional;

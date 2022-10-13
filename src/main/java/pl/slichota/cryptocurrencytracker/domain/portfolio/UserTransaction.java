@@ -1,12 +1,12 @@
-package pl.slichota.licencjant.pracalicencjacka.domain.portfolio;
+package pl.slichota.cryptocurrencytracker.domain.portfolio;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.NonNull;
-import pl.slichota.licencjant.pracalicencjacka.domain.Cryptocurrency;
-import pl.slichota.licencjant.pracalicencjacka.validator.DateTimeConstraint;
+import pl.slichota.cryptocurrencytracker.domain.Cryptocurrency;
+import pl.slichota.cryptocurrencytracker.validator.DateTimeConstraint;
+
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;

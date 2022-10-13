@@ -1,8 +1,5 @@
-package pl.slichota.licencjant.pracalicencjacka.validator;
+package pl.slichota.cryptocurrencytracker.validator;
 
-import pl.slichota.licencjant.pracalicencjacka.validator.DateTimeConstraint;
-
-import javax.validation.Constraint;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.Date;

@@ -1,10 +1,9 @@
-package pl.slichota.licencjant.pracalicencjacka.validator;
+package pl.slichota.cryptocurrencytracker.validator;
 
-import pl.slichota.licencjant.pracalicencjacka.domain.portfolio.UserCompletedPurchase;
+import pl.slichota.cryptocurrencytracker.domain.portfolio.UserCompletedPurchase;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.Date;
 
 public class CompareDatesValidatior implements ConstraintValidator<CompareDatesConstraint, UserCompletedPurchase> {
 

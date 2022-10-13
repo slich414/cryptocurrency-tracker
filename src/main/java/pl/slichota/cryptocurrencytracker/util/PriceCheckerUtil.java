@@ -1,4 +1,4 @@
-package pl.slichota.licencjant.pracalicencjacka.util;
+package pl.slichota.cryptocurrencytracker.util;
 
 
 import org.json.JSONObject;

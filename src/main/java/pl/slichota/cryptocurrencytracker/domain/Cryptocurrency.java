@@ -1,4 +1,4 @@
-package pl.slichota.licencjant.pracalicencjacka.domain;
+package pl.slichota.cryptocurrencytracker.domain;
 
 
 import javax.persistence.Entity;

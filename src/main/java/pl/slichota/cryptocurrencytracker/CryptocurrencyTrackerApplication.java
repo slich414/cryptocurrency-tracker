@@ -11,10 +11,10 @@ import pl.slichota.cryptocurrencytracker.service.UserCompletedPurchaseService;
 import java.io.IOException;
 
 @SpringBootApplication
-public class PracaLicencjackaApplication {
+public class CryptocurrencyTrackerApplication {
 
 	public static void main(String[] args) throws IOException {
-		SpringApplication.run(PracaLicencjackaApplication.class, args);
+		SpringApplication.run(CryptocurrencyTrackerApplication.class, args);
 
 	}
 

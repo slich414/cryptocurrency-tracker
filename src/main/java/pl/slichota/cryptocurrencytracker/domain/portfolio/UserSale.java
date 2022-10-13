@@ -1,6 +1,8 @@
-package pl.slichota.licencjant.pracalicencjacka.domain.portfolio;
+package pl.slichota.cryptocurrencytracker.domain.portfolio;
 
-import pl.slichota.licencjant.pracalicencjacka.domain.Cryptocurrency;
+
+
+import pl.slichota.cryptocurrencytracker.domain.Cryptocurrency;
 
 import javax.persistence.Entity;
 import java.math.BigDecimal;
